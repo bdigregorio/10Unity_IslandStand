@@ -310,6 +310,7 @@ MonoBehaviour:
   speed: 8
   powerUpStrength: 10
   isPoweredUp: 0
+  powerUpDuration: 5
 --- !u!1 &685926685
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour {
     private GameObject focalPointObject;
     public float speed;
     public float powerUpStrength;
-    public bool isPoweredUp = false;
+    private bool isPoweredUp = false;
+    public float powerUpDuration;
 
     private void Start() {
         InitializeComponents();
@@ -44,6 +45,13 @@ public class PlayerController : MonoBehaviour {
     private void ConsumePowerUp(GameObject powerUp) {
         isPoweredUp = true;
         Destroy(powerUp);
+        StartCoroutine(PowerupCountdownRoutine());
+    }
+
+    IEnumerator PowerupCountdownRoutine() {
+        yield return new WaitForSeconds(powerUpDuration);
+        isPoweredUp = false;
+        Debug.Log($"Powerup timer expired - isPoweredUp: {isPoweredUp}");
     }
 
     private void PoweredUpEnemyCollision(Collision enemyCollision) {
