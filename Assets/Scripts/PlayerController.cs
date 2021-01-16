@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour {
     public float powerupStrength;
     private bool isPoweredUp = false;
     public float powerupDuration;
+    public bool isGameOver = false;
+    private float verticalBounds = -5.0f;
 
     private void Start() {
         InitializeComponents();
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Update() {
         ApplyInputForce();
+        CheckForGameOver();
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -66,5 +69,11 @@ public class PlayerController : MonoBehaviour {
         
         Vector3 awayFromPlayer = (enemy.transform.position - transform.position).normalized;
         enemyRigidbody.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse);
+    }
+
+    private void CheckForGameOver() {
+        if (transform.position.y < verticalBounds) {
+            isGameOver = true;
+        }
     }
 }

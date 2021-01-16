@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour {
     private GameObject player;
     private Rigidbody thisRigidBody;
     public float speed;
-    private float verticalBounds = -3.0f;
+    private float verticalBounds = -5.0f;
 
     private void Start() {
         InitializeComponents();
