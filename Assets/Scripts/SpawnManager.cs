@@ -10,10 +10,6 @@ public class SpawnManager : MonoBehaviour {
         SpawnEnemyAtRandomPosition();
     }
 
-    private void Update() {
-        
-    }
-
     private void SpawnEnemyAtRandomPosition() {
         Instantiate(enemyPrefab, RandomSpawnPosition(), enemyPrefab.transform.rotation);
     }
