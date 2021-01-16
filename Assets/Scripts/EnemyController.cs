@@ -7,11 +7,11 @@ public class EnemyController : MonoBehaviour {
     private Rigidbody thisRigidBody;
     public float speed;
 
-    void Start() {
+    private void Start() {
         InitializeComponents();
     }
 
-    void Update() {
+    private void Update() {
         MoveTowardPlayer();
     }
 
