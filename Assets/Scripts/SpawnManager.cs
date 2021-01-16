@@ -10,7 +10,15 @@ public class SpawnManager : MonoBehaviour {
         SpawnEnemyWave(3);
     }
 
+    private void Update() {
+        int enemyCount = GameObject.FindObjectsOfType<EnemyController>().Length;
+        if (enemyCount == 0) {
+            SpawnEnemyWave(1);
+        }
+    }
+
     private void SpawnEnemyWave(int enemiesToSpawn) {
+        Debug.Log($"Spawning new enemy wave with {enemiesToSpawn}");
         for (int i = 0; i < enemiesToSpawn; i++) {
             Instantiate(enemyPrefab, RandomSpawnPosition(), enemyPrefab.transform.rotation);
         }
