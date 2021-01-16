@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour {
 
     private Rigidbody playerRigidBody;
     private GameObject focalPoint;
-    private float speed = 5;
+    private float speed = 8;
     private float verticalInput = 0;
 
     void Start() {
