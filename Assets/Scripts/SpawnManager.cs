@@ -6,12 +6,8 @@ public class SpawnManager : MonoBehaviour {
     public GameObject enemyPrefab;
     private float spawnRange = 8.0f;
 
-    void Start() {
+    private void Start() {
         SpawnEnemyAtRandomPosition();
-    }
-
-    void Update() {
-        
     }
 
     private void SpawnEnemyAtRandomPosition() {
