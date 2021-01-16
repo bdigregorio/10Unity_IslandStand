@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour {
     private void Update() {
         MoveTowardPlayer();
         RemoveIfOutOfBounds();
+        RemoveIfGameIsOver();
     }
 
     private void InitializeComponents() {
@@ -30,6 +31,13 @@ public class EnemyController : MonoBehaviour {
     private void RemoveIfOutOfBounds() {
         if (transform.position.y < verticalBounds) {
             Debug.Log("Destroying enemy game object");
+            Destroy(gameObject);
+        }
+    }
+
+    private void RemoveIfGameIsOver() {
+        bool gameIsOver = player.GetComponent<PlayerController>().isGameOver;
+        if (gameIsOver) {
             Destroy(gameObject);
         }
     }

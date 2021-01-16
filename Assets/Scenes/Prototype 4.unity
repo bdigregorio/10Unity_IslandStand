@@ -389,7 +389,8 @@ MonoBehaviour:
   powerupIndicator: {fileID: 574854085}
   speed: 8
   powerupStrength: 12
-  powerupDuration: 8
+  powerupDuration: 10
+  isGameOver: 0
 --- !u!1 &685926685
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,6 +709,7 @@ MonoBehaviour:
     type: 3}
   powerupPrefab: {fileID: 5409107866352335313, guid: 3b5fcb09daf0bce44ac5f36a0190982f,
     type: 3}
+  playerController: {fileID: 0}
 --- !u!4 &1823463849
 Transform:
   m_ObjectHideFlags: 0
