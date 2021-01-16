@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateCamera : MonoBehaviour {
     private float horizontalInput;
-    private float rotationSpeed = 45;
+    public float rotationSpeed;
 
     private void Update() {
         horizontalInput = Input.GetAxis("Horizontal");

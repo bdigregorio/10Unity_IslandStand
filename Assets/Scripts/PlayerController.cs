@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    private Rigidbody playerRigidBody;
-    private GameObject focalPoint;
-    private float speed = 8;
-    private float verticalInput = 0;
+    private Rigidbody thisRigidBody;
+    private GameObject focalPointObject;
+    public float speed;
 
     void Start() {
-        playerRigidBody = GetComponent<Rigidbody>();
-        focalPoint = GameObject.Find("Focal Point");
+        InitializeComponents();
     }
 
     void Update() {
-        verticalInput = Input.GetAxis("Vertical");
-        playerRigidBody.AddForce(focalPoint.transform.forward * speed * verticalInput);
+        ApplyInputForce();
+    }
+
+    private void InitializeComponents() {
+        thisRigidBody = GetComponent<Rigidbody>();
+        focalPointObject = GameObject.Find("Focal Point");
+    }
+
+    private void ApplyInputForce() {
+        // input value is between 0 and 1 
+        float verticalInputMagnitude = Input.GetAxis("Vertical");
+        thisRigidBody.AddForce(focalPointObject.transform.forward * verticalInputMagnitude * speed);
     }
 }
