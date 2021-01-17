@@ -122,4 +122,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  difficultySpeedIncrement: 1
   playerGoal: {fileID: 0}
