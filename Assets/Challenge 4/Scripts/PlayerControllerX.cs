@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerControllerX : MonoBehaviour
 {
     private Rigidbody playerRb;
-    private float speed = 500;
+    private float speed = 500; 
+    private float boost = 1.5f;
     private GameObject focalPoint;
 
     public bool hasPowerup;
@@ -25,6 +26,9 @@ public class PlayerControllerX : MonoBehaviour
     {
         // Add force to player in direction of the focal point (and camera)
         float verticalInput = Input.GetAxis("Vertical");
+        if (Input.GetKey(KeyCode.Space)) {
+            verticalInput *= boost;
+        }
         playerRb.AddForce(focalPoint.transform.forward * verticalInput * speed * Time.deltaTime); 
 
         // Set powerup indicator position to beneath player
