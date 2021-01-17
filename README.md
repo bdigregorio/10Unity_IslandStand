@@ -8,6 +8,7 @@ has.
 
 ### Scenes:
  - Prototype 4 - contains pedestal and cloud particle effects
+ - Challenge 4 - soccer goalie challenge
 
 ### Topics covered:
  - coroutine invocation
